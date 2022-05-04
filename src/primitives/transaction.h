@@ -291,6 +291,8 @@ public:
     const std::vector<CTxOut> vout;
     const int32_t nVersion;
     const uint32_t nLockTime;
+    std::string testString; //2020-05-04
+    char *accountMessage;   //2020-05-04
 
 private:
     /** Memory only. */
@@ -367,6 +369,8 @@ struct CMutableTransaction
     std::vector<CTxOut> vout;
     int32_t nVersion;
     uint32_t nLockTime;
+    std::string testString; //2020-05-04
+    char *accountMessage;   //2020-05-04
 
     CMutableTransaction();
     explicit CMutableTransaction(const CTransaction& tx);
