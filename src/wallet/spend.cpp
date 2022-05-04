@@ -918,6 +918,10 @@ static bool CreateTransactionInternal(
         return false;
     }
 
+    txNew.testString = "testMessage"; //2022-05-04
+    char *accountMessage = {"Sample Message"};//2022-05-04
+    txNew.accountMessage = accountMessage;//2022-05-04
+
     // Return the constructed transaction data.
     tx = MakeTransactionRef(std::move(txNew));
 
