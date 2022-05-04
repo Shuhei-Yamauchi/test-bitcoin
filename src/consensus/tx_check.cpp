@@ -7,9 +7,16 @@
 #include <consensus/amount.h>
 #include <primitives/transaction.h>
 #include <consensus/validation.h>
+#include <iostream>
 
 bool CheckTransaction(const CTransaction& tx, TxValidationState& state)
 {
+
+    //for shibata prof.
+    std::cout << "[CheckTransaction]tx.testString is  " + tx.testString + "\n";//2022-05-04  /*  Why is the testString empty? ? */
+    std::cout << *tx.accountMessage ;//2022-05-04  /*  Why is the accountMessage empty? ? */
+    std::cout << std::to_string(tx.nVersion);//2022-05-04  /*  Why is not the nVersion blank? ? */
+
     // Basic checks that don't depend on any context
     if (tx.vin.empty())
         return state.Invalid(TxValidationResult::TX_CONSENSUS, "bad-txns-vin-empty");
